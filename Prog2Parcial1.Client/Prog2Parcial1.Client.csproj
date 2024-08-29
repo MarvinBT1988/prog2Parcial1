@@ -81,5 +81,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Prog2Parcial1.Domain\Prog2Parcial1.Domain.csproj">
+      <Project>{510ee9b3-b657-46e6-a1a8-360aa58a8fa9}</Project>
+      <Name>Prog2Parcial1.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
