@@ -44,9 +44,17 @@ namespace Prog2Parcial1.Client
             empleado.Salario = decimal.Parse(txtSalario.Text);
             return empleado;
         }
+        private void MostrarInformacion(Planilla planilla)
+        {
+            txtAFP.Text = planilla.CalcularAFP().ToString();
+            txtISSS.Text = planilla.CalcularISSS().ToString();
+            txtRenta.Text = planilla.CalcularRenta().ToString();
+        }
         private void btnCalcularPlanilla_Click(object sender, EventArgs e)
         {
-
+            Empleado empleado=ObtenerEmpleado();
+            Planilla planilla=new Planilla(empleado.Salario);
+            MostrarInformacion(planilla);
         }
 
         private void txtSalario_KeyPress(object sender, KeyPressEventArgs e)
