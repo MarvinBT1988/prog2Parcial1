@@ -31,11 +31,7 @@ namespace Prog2Parcial1.Domain
         public decimal CalcularISSS()
         {
 
-            ISSS = Salario * 0.03m ;
-            if (ISSS > 30)
-            {
-                ISSS = 30;
-            }
+            ISSS = Salario * 0.03m ;           
             ISSS = decimal.Round(ISSS,2);
             if (ISSS > 30)
                 return 30;
