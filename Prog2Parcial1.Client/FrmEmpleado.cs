@@ -33,7 +33,8 @@ namespace Prog2Parcial1.Client
             txtSalario.Text = string.Empty;
             txtISSS.Text = string.Empty;
             txtAFP.Text = string.Empty;
-            txtDUI.Text= string.Empty;
+            txtRenta.Text= string.Empty;
+
         }
         private Empleado ObtenerEmpleado() {
             Empleado empleado = new Empleado();
