@@ -58,11 +58,11 @@ namespace Prog2Parcial1.Domain
         {
             SalarioMenosISSYAFP = ObtenerSalarioMenosISSYAFP();
 
-            if (SalarioMenosISSYAFP > 472.1m & SalarioMenosISSYAFP < 895.24m)
+            if (SalarioMenosISSYAFP >= 472.1m & SalarioMenosISSYAFP <= 895.24m)
             {
-                Renta = SalarioMenosISSYAFP * 0.10m;
+                Renta = ((SalarioMenosISSYAFP- 472.1m )* 0.10m)+17.67m;
             }
-            else if(SalarioMenosISSYAFP >= 895.24m & SalarioMenosISSYAFP < 2038.10m)
+            else if(SalarioMenosISSYAFP >= 895.24m & SalarioMenosISSYAFP <= 2038.10m)
             {
                 Renta = SalarioMenosISSYAFP * 0.20m;
             }
