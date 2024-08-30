@@ -51,11 +51,32 @@ namespace Prog2Parcial1.Client
             txtISSS.Text = planilla.CalcularISSS().ToString();
             txtRenta.Text = planilla.CalcularRenta().ToString();
         }
+        private bool DatosValidos() {
+            bool validarDatos = true ;
+            decimal salario=0;
+            if (decimal.TryParse(txtSalario.Text, out salario) == false)
+                salario = 0;
+            if (string.IsNullOrEmpty(txtNombre.Text) ||
+                 string.IsNullOrEmpty(txtApellido.Text) ||
+                  string.IsNullOrEmpty(txtArea.Text) ||
+                   string.IsNullOrEmpty(txtDUI.Text) || 
+                   txtDUI.Text.Trim().Length<10 ||
+                  salario <= 0)
+            {
+                validarDatos = false;
+                MessageBox.Show("Los campos con * son obligatorios", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);             
+            }
+            return validarDatos;
+
+        }
         private void btnCalcularPlanilla_Click(object sender, EventArgs e)
         {
-            Empleado empleado=ObtenerEmpleado();
-            Planilla planilla=new Planilla(empleado.Salario);
-            MostrarInformacion(planilla);
+            if (DatosValidos())
+            {
+                Empleado empleado = ObtenerEmpleado();
+                Planilla planilla = new Planilla(empleado.Salario);
+                MostrarInformacion(planilla);
+            }
         }
 
         private void txtSalario_KeyPress(object sender, KeyPressEventArgs e)

@@ -30,11 +30,9 @@
         {
             this.btnCalcularPlanilla = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDUI = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtArea = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +44,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtRenta = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtDUI = new System.Windows.Forms.MaskedTextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCalcularPlanilla
@@ -64,16 +64,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(75, 36);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(169, 20);
-            this.txtNombre.TabIndex = 1;
+            this.label1.Text = "Nombre *";
             // 
             // btnLimpiar
             // 
@@ -98,25 +91,18 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(270, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Apellido";
-            // 
-            // txtDUI
-            // 
-            this.txtDUI.Location = new System.Drawing.Point(75, 91);
-            this.txtDUI.Name = "txtDUI";
-            this.txtDUI.Size = new System.Drawing.Size(169, 20);
-            this.txtDUI.TabIndex = 4;
+            this.label2.Text = "Apellido *";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "DUI";
+            this.label3.Text = "DUI *";
             // 
             // txtArea
             // 
@@ -130,9 +116,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(531, 35);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Area";
+            this.label4.Text = "Area *";
             // 
             // txtSalario
             // 
@@ -147,9 +133,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(270, 94);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 13);
+            this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Salario";
+            this.label5.Text = "Salario *";
             // 
             // txtISSS
             // 
@@ -202,11 +188,27 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "Renta";
             // 
+            // txtDUI
+            // 
+            this.txtDUI.Location = new System.Drawing.Point(75, 87);
+            this.txtDUI.Mask = "00000000-0";
+            this.txtDUI.Name = "txtDUI";
+            this.txtDUI.Size = new System.Drawing.Size(169, 20);
+            this.txtDUI.TabIndex = 18;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(75, 36);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(169, 20);
+            this.txtNombre.TabIndex = 1;
+            // 
             // FrmEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 275);
+            this.Controls.Add(this.txtDUI);
             this.Controls.Add(this.txtRenta);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtAFP);
@@ -217,7 +219,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtArea);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtDUI);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label2);
@@ -237,11 +238,9 @@
 
         private System.Windows.Forms.Button btnCalcularPlanilla;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDUI;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.Label label4;
@@ -253,6 +252,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtRenta;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.MaskedTextBox txtDUI;
+        private System.Windows.Forms.TextBox txtNombre;
     }
 }
 
