@@ -37,7 +37,10 @@ namespace Prog2Parcial1.Domain
                 ISSS = 30;
             }
             ISSS = decimal.Round(ISSS,2);
-            return ISSS > 30 ? 30 : ISSS;
+            if (ISSS > 30)
+                return 30;
+            else
+                return ISSS;
         }
 
         public decimal CalcularAFP()
