@@ -30,7 +30,7 @@ namespace Prog2Parcial1.Domain
 			Nombre = nombre;
 			Apellido = apellido;
 			Area = area;
-			Dui = dui;
+			DUI = dui;
 			Salario = salario;
         }
     }

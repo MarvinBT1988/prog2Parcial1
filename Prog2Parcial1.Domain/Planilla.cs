@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Prog2Parcial1.Domain
 {
-	internal class Planilla
+	public class Planilla
 	{
 
 		public decimal Salario { get; set; }
@@ -16,6 +16,12 @@ namespace Prog2Parcial1.Domain
         private decimal AFP { get; set; }
 
         private decimal Renta { get; set; }
+
+
+        public Planilla()
+        {
+            
+        }
 
         public Planilla ( decimal salario)
         {
