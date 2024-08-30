@@ -58,8 +58,7 @@ namespace Prog2Parcial1.Domain
             {
 				Renta = ((salarioDespuesDescuentosISSSyAFP - 2038.10m) * 0.30m) + 288.57m;
 			}
-            Renta = decimal.Round(Renta,2);
-            return Renta;
+            return decimal.Round(Renta, 2);
    
         }
 
