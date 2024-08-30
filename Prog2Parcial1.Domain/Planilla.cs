@@ -17,10 +17,6 @@ namespace Prog2Parcial1.Domain
 
         private decimal Renta { get; set; }
 
-        
-        private decimal SalarioMenosISSYAFP { get; set; }
-
-
         public Planilla()
         {
 
@@ -31,48 +27,40 @@ namespace Prog2Parcial1.Domain
             Salario = salario;
         }
 
-        private decimal  ObtenerSalarioMenosISSYAFP(){
-             SalarioMenosISSYAFP = Salario - CalcularISSS() - CalcularAFP();
-            return SalarioMenosISSYAFP;
-
-		}
-
 
         public decimal CalcularISSS()
         {
 
-            ISSS = Salario * 0.03m ; 
+            ISSS = Salario * 0.03m ;
             if (ISSS > 30)
             {
                 ISSS = 30;
             }
-            // ISSS = decimal.Round(ISSS,2);
-            return ISSS;
+            ISSS = decimal.Round(ISSS,2);
+            return ISSS > 30 ? 30 : ISSS;
         }
 
         public decimal CalcularAFP()
         {
             AFP = Salario * 0.0725m;
-            //AFP = decimal.Round(AFP,2);
+            AFP = decimal.Round(AFP,2);
             return AFP;
         }
 
         public decimal CalcularRenta() 
         {
-            SalarioMenosISSYAFP = ObtenerSalarioMenosISSYAFP();
-           // SalarioMenosISSYAFP = Salario - Salario * 0.03m - Salario * 0.0725M;
-
-			if (SalarioMenosISSYAFP >= 472.01m & SalarioMenosISSYAFP <= 895.24m)
+            decimal salarioDespuesDescuentosISSSyAFP = Salario - AFP - ISSS;
+			if (salarioDespuesDescuentosISSSyAFP >= 472.01m & salarioDespuesDescuentosISSSyAFP <= 895.24m)
             {
-                Renta = ((SalarioMenosISSYAFP- 472.0m )* 0.10m)+17.67m;
+                Renta = ((salarioDespuesDescuentosISSSyAFP - 472.0m )* 0.10m)+17.67m;
             }
-            else if(SalarioMenosISSYAFP >= 895.25m & SalarioMenosISSYAFP <= 2038.10m)
+            else if(salarioDespuesDescuentosISSSyAFP >= 895.25m & salarioDespuesDescuentosISSSyAFP <= 2038.10m)
             {
-				Renta = ((SalarioMenosISSYAFP - 895.24m) * 0.20m) + 60m;
+				Renta = ((salarioDespuesDescuentosISSSyAFP - 895.24m) * 0.20m) + 60m;
 			}
-            else if ( SalarioMenosISSYAFP >= 2038.11m )
+            else if (salarioDespuesDescuentosISSSyAFP >= 2038.11m )
             {
-				Renta = ((SalarioMenosISSYAFP - 2038.11m) * 0.30m) + 288.57m;
+				Renta = ((salarioDespuesDescuentosISSSyAFP - 2038.11m) * 0.30m) + 288.57m;
 			}
             Renta = decimal.Round(Renta,2);
             return Renta;
