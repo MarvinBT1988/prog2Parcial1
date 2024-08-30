@@ -31,19 +31,16 @@ namespace Prog2Parcial1.Domain
         public decimal CalcularISSS()
         {
 
-            ISSS = Salario * 0.03m ;           
-            ISSS = decimal.Round(ISSS,2);
+            ISSS = Salario * 0.03m ;
             if (ISSS > 30)
-                return 30;
-            else
-                return ISSS;
+                ISSS= 30;
+            return decimal.Round(ISSS,2);           
         }
 
         public decimal CalcularAFP()
         {
             AFP = Salario * 0.0725m;
-            AFP = decimal.Round(AFP,2);
-            return AFP;
+            return decimal.Round(AFP, 2);
         }
 
         public decimal CalcularRenta() 
@@ -59,7 +56,7 @@ namespace Prog2Parcial1.Domain
 			}
             else if (salarioDespuesDescuentosISSSyAFP >= 2038.11m )
             {
-				Renta = ((salarioDespuesDescuentosISSSyAFP - 2038.11m) * 0.30m) + 288.57m;
+				Renta = ((salarioDespuesDescuentosISSSyAFP - 2038.10m) * 0.30m) + 288.57m;
 			}
             Renta = decimal.Round(Renta,2);
             return Renta;
