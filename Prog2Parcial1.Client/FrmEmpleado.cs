@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Prog2Parcial1.Domain;
 
 namespace Prog2Parcial1.Client
 {
@@ -34,7 +35,15 @@ namespace Prog2Parcial1.Client
             txtAFP.Text = string.Empty;
             txtDUI.Text= string.Empty;
         }
-
+        private Empleado ObtenerEmpleado() {
+            Empleado empleado = new Empleado();
+            empleado.Nombre=txtNombre.Text;
+            empleado.Apellido=txtApellido.Text;
+            empleado.Area=txtArea.Text;
+            empleado.DUI=txtDUI.Text;
+            empleado.Salario = decimal.Parse(txtSalario.Text);
+            return empleado;
+        }
         private void btnCalcularPlanilla_Click(object sender, EventArgs e)
         {
 

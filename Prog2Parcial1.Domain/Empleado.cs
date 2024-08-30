@@ -9,15 +9,13 @@ namespace Prog2Parcial1.Domain
 	public  class Empleado
 	{
 
-		public string EmpleadoId { get; set; }
-
 		public string Nombre { get; set; }
 
 		public string Apellido { get; set; }
 
 		public string Area { get; set; }
 
-		public string Dui {  get; set; }
+		public string DUI {  get; set; }
 
 		public decimal Salario { get; set; }
 
