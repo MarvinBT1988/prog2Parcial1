@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Prog2Parcial1.Domain
 {
+
+	//ALUMNOS: MARVIN ANTONIO BARRERA TRIGUEROS
+	//JOSUE JONATHAN DIAZ PEREZ
 	public  class Empleado
 	{
 
